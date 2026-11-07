@@ -1,0 +1,6 @@
+# Example configuration: zone fare in paise
+INNER 1000
+MIDDLE 2000
+OUTER 3000
+PEAK_PERCENT 20
+MIN_BALANCE_PAISE 5000
