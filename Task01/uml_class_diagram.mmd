@@ -1,0 +1,58 @@
+classDiagram
+    class Passenger {
+        -string passengerId
+        -PassengerCategory category
+        +getPassengerId() string
+        +getCategory() PassengerCategory
+    }
+
+    class PassengerCategory {
+        <<enumeration>>
+        REGULAR
+        STUDENT
+        SENIOR_CITIZEN
+    }
+
+    class SmartCard {
+        -string cardId
+        -long long balancePaise
+        +recharge(amount) bool
+        +canTravel(fare) bool
+        +deduct(fare) bool
+        +getBalance() long long
+    }
+
+    class Journey {
+        -Zone sourceZone
+        -Zone destinationZone
+        -int departureHour
+        -long long farePaise
+        +recordJourney() void
+        +getFare() long long
+    }
+
+    class Zone {
+        <<enumeration>>
+        INNER
+        MIDDLE
+        OUTER
+    }
+
+    class FareTable {
+        -baseFares
+        -surchargePercent
+        +getBaseFare(zone) long long
+        +getSurchargePercent() int
+    }
+
+    class FareCalculator {
+        +calculateFare(journey) long long
+        +isPeakHour(hour) bool
+    }
+
+    Passenger --> PassengerCategory : category
+    Passenger "1" --> "0..*" SmartCard : uses
+    SmartCard "1" --> "0..*" Journey : records
+    Journey --> Zone : uses
+    FareCalculator --> FareTable : reads
+    FareCalculator --> Journey : calculates
