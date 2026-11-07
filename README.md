@@ -155,7 +155,7 @@ cl /std:c++17 /W4 /EHsc filename.cpp
 ### Execute the generated program
 
 ```powershell
-.\\filename.exe
+.\filename.exe
 ```
 
 Replace `filename.cpp` with the required source file.
@@ -164,7 +164,7 @@ For example:
 
 ```powershell
 cl /std:c++17 /W4 /EHsc constants_demo.cpp
-.\\constants_demo.exe
+.\constants_demo.exe
 ```
 
 The `/W4` option enables a high level of compiler warnings, while `/EHsc` enables standard C++ exception handling.
@@ -244,3 +244,5 @@ The final design challenge further evaluates the system's ability to accommodate
 **Repository:** https://github.com/192511209simats-spec/DSA01-192511209-Assignment1  
 **Assignment:** DSA01 – Assignment 1  
 **Language:** C++17
+
+
